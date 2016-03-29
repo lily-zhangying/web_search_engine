@@ -9,7 +9,10 @@
 
 #Plan
 ## 03/28 - 04/02 
-  * crawl data from amazon(ying), newegg(caijie), bestbuy(Alan)
+  * crawl data from 
+  * amazon(ying)
+  * newegg(caijie)
+  * bestbuy(Alan)
   
 ## 04/03 - 04/09 
   * Front-end part one
