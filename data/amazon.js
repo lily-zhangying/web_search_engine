@@ -1,8 +1,7 @@
-
-
-// Get Electronics products from amazon
+// Get Electronics products information from amazon
 // can't get all data at one, because : http://docs.aws.amazon.com/AWSECommerceService/latest/DG/PagingThroughResults.html
 // so, we use a product list we get from best buy, then search in amazon
+
 var async = require("async");
 var fs = require('fs');
 
@@ -14,8 +13,20 @@ var aws = require("aws-lib");
 var prodAdv = aws.createProdAdvClient(AWSAccessKeyId, AWSSecretKey, Associates_ID);
 
 //@TODO read search index list from file
-var obj = JSON.parse(fs.readFileSync('./list.json', 'utf8'));
-var Search_Index_list = ["Computer", "Printer", "Phone", "TV", "Headphones", "Camera", "Speakers", "Car Electronics", "HOME AUDIO"]
+var Search_Index_list = [];
+dirname = "./list";
+filenames = fs.readdirSync(dirname);
+filenames.forEach(function(filename) {
+	content = fs.readFileSync(dirname + filename, 'utf-8');
+	var obj = JSON.parse(content);
+	console.log(obj);
+	obj,forEach(function(item){
+		Search_Index_list.push(item.name);
+	});
+});
+
+console.log(Search_Index_list);
+// var Search_Index_list = ["Computer", "Printer", "Phone", "TV", "Headphones", "Camera", "Speakers", "Car Electronics", "HOME AUDIO"]
 
 op1 = {};
 op1.SearchIndex = "Electronics";
