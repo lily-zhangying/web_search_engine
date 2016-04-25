@@ -1,32 +1,19 @@
 // Get Electronics products information from amazon
-// can't get all data at one, because : http://docs.aws.amazon.com/AWSECommerceService/latest/DG/PagingThroughResults.html
+// can't get all data at once, because : http://docs.aws.amazon.com/AWSECommerceService/latest/DG/PagingThroughResults.html
 // so, we use a product list we get from best buy, then search in amazon
 
 var async = require("async");
 var fs = require('fs');
 
-var AWSAccessKeyId = "AKIAIYF6CVU74YZOOY4A"
-var Associates_ID = "lily0c-20"
-var AWSSecretKey = "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"
+var AWSAccessKeyId = ""
+var Associates_ID = ""
+var AWSSecretKey = ""
 
 var aws = require("aws-lib");
 var prodAdv = aws.createProdAdvClient(AWSAccessKeyId, AWSSecretKey, Associates_ID);
 
-//@TODO read search index list from file
-var Search_Index_list = [];
-dirname = "./list";
-filenames = fs.readdirSync(dirname);
-filenames.forEach(function(filename) {
-	content = fs.readFileSync(dirname + filename, 'utf-8');
-	var obj = JSON.parse(content);
-	console.log(obj);
-	obj,forEach(function(item){
-		Search_Index_list.push(item.name);
-	});
-});
-
-console.log(Search_Index_list);
-// var Search_Index_list = ["Computer", "Printer", "Phone", "TV", "Headphones", "Camera", "Speakers", "Car Electronics", "HOME AUDIO"]
+//read search index list from item/*.json
+var Search_Index_list = JSON.parse(fs.readFileSync("./item/10.json", "utf-8"));
 
 op1 = {};
 op1.SearchIndex = "Electronics";
@@ -35,47 +22,66 @@ op1.ItemPage = 1;
 op1.ResponseGroup = "Large"
 
 fun_list = []
+hash_one = {}
+op_tmp = []
+
+// filter the name, only keep the short name in order to get search result
 for(var i = 0; i < Search_Index_list.length; i++){
-	op = op1;
-	op.Keywords = Search_Index_list[i];
-	var tmp = function(cb){ 
-		    	prodAdv.call("ItemSearch", op, function(err, result){	
-		    		console.log(result)				
-					cb(null, result);
-				});
-		    };
-	fun_list.push(tmp);
+	var tmp = Search_Index_list[i];
+	if(tmp == null) continue;
+	var k = tmp.indexOf("-") > -1 ? tmp.indexOf("-") : tmp.length;
+	key = tmp.substr(0, k);
+	if(key in hash_one) continue;
+
+	hash_one[key] = 1
+	op_tmp.push(key);
 }
+console.log(op_tmp.length);
+
+op_tmp.forEach(function(o){
+	var tmp = function(cb){ 
+		 setTimeout(function(){
+		 	var option = op1;
+		 	option.Keywords = o;
+            prodAdv.call("ItemSearch", option, function(err, result){	
+            	if("Items" in result && "Request" in result.Items && "Errors" in result.Items.Request){
+	    			console.log(result.Items.Request.Errors);
+	    			cb(null, null);
+	    		}else{
+	    			console.log("======  " + option.Keywords)
+					// console.log(result);
+					items = result.Items.Item;
+					//10 items here, amazon only return 10 items in one page
+					for(var j = 0; j < items.length; j++){
+						items_new = {}
+						items_new.ASIN = items[j].ASIN;
+						items_new.DetailPageURL = items[j].DetailPageURL;
+						items_new.Manufacturer = items[j].ItemAttributes.Manufacturer;
+						items_new.ProductGroup = items[j].ItemAttributes.ProductGroup;
+						items_new.Title = items[j].ItemAttributes.Title;
+						items_new.SmallImage = items[j].SmallImage;
+						items_new.Feature = items[j].ItemAttributes.Feature;
+						items_new.LowestNewPrice = items[j].OfferSummary.LowestNewPrice;
+						items_new.CustomerReviews = items[j].CustomerReviews;
+						// if( !(items[j].ASIN in hash)){
+						// 	hash[items[j].ASIN] = 1; 
+						// 	ret.push(items_new);
+						// }
+						fs.appendFileSync('./tmp10.json', JSON.stringify(items_new, null, 2) + ",", 'utf-8');
+					}
+					cb(null, " ");
+	    		}	
+            });
+        }, 500);
+	};
+	fun_list.push(tmp);
+});
 
 async.series(fun_list, function(err, result){
 	if(err){
 		console.log("error" + err);
-		return
+		// return
 	}
-	ret = []
-	hash = {}
-	for(var i = 0; i < result.length; i++){
-		items = result[i].Items.Item;
-		//@todo get only top three
-		for(var j = 0; j < items.length; j++){
-			items_new = {}
-			items_new.ASIN = items[j].ASIN;
-			items_new.DetailPageURL = items[j].DetailPageURL;
-			items_new.Manufacturer = items[j].ItemAttributes.Manufacturer;
-			items_new.ProductGroup = items[j].ItemAttributes.ProductGroup;
-			items_new.Title = items[j].ItemAttributes.Title;
-			items_new.SmallImage = items[j].SmallImage;
-			items_new.Feature = items[j].ItemAttributes.Feature;
-			items_new.LowestNewPrice = items[j].OfferSummary.LowestNewPrice;
-			items_new.CustomerReviews = items[j].CustomerReviews;
-			if( !(items[j].ASIN in hash)){
-				hash[items[j].ASIN] = 1;
-				ret.push(items_new);
-			}
-		}
-		
-	}
-	fs.writeFileSync('./tmp.json', JSON.stringify(ret, null, 2), 'utf-8'); 
 	console.log("Done");
 });
 
