@@ -8,18 +8,13 @@ if($scriptInvokedFromCli) {
     if (empty($port)) {
         $port = "8888";
     }
-
     echo 'starting server on port '. $port . PHP_EOL;
     exec('php -S localhost:'. $port . ' -t public index.php');
 } else {
     return routeRequest();
 }
 
-$root = dirname(__FILE__) . DIRECTORY_SEPARATOR;
-$path = $_SERVER['REQUEST_URI'];
-
-function routeRequest()
-{
+function routeRequest() {
     $root = dirname(__FILE__) . DIRECTORY_SEPARATOR;
     //todo in linux , remove split[0] which is ~zy674
     $path = $_SERVER['REQUEST_URI'];
@@ -98,14 +93,20 @@ function routeRequest()
         if(($pos = strpos($path, '?')) !== false){
             $query = substr($path, $pos+1);
             $query_split = explode('&', $query);
+            $paras = "";
+            $query_nopage = "";
             foreach ($query_split as $key => $value) {
-                //todo maybe change query to some format java can accept
+                $k = substr($value, 0, strpos($value, "="));
+                $v = substr($value, strpos($value, "=")+1);
+                $paras .= "-" . $k . " " . $v . " "; 
+                if($k != "page_num"){
+                    $query_nopage .= $k . "=" . $v . "&";
+                }
+                //参数  -query apple+cellphone -seller apple -page 1
             }
-            var_dump($query_split);
             //@TODO use paramerter to run java here
-            
-            $data = get_data($query);
-            render_detail($data);
+            $data = get_data($paras);
+            render_detail($data, $query_nopage);
         }else{
             render_detail();
         }
@@ -125,58 +126,79 @@ function render($page, $data = NULL){
     echo file_get_contents("./public/page/foot.html");
 }
 
-function render_detail($data=[]){
-     echo file_get_contents("./public/page/top.html");
-     $content = get_data($query);
-     //render html here
-     $html =' <div id="right-column">
+function render_detail($data=[],  $query_nopage=""){
+    if(count($data) == 0){
+        return get_empty_page();
+    }
+    $path = "/page/detail.html";
+    $content = $data['items'];
+    $page_num = intval($data['page_number']);
+    $total_page = intval($data['total_items']) / 10;
+
+    echo file_get_contents("./public/page/top.html");
+    //render html here
+    $html ='<div id="right-column">
                     <div id="content">
                     <div id="wrap-featured-products" style="margin-top: 20px;">
                       <div class="wrap-title-black">
                         <h1 class="nice-title">Products List</h1>
                       </div>
-                      <ul id="inline-product-list">" ';
-    // echo $html;
+                      <ul id="inline-product-list"> ';
+
     if(count($content) > 0){
         foreach ($content as $key => $value) {
-            $html += '<li>
-                  <div class="product-photo"><a href="' + $content['url']+ '">
-                    <img src="' + $content['pic_url'] + '" alt="" /></a>
+            $name = $value['Title'];
+            $brand = $value['Manufacturer'];
+            $price = $value['LowestNewPrice']['FormattedPrice'];
+            $detail_url = $value['DetailPageURL'];
+            $img_url = $value['SmallImage']['URL'];
+
+            $html .= '<li>
+                  <div class="product-photo"><a href="' . $detail_url . '">
+                    <img src="' . $img_url . '" alt="" /></a>
                   </div>';
-            $html += '<div class="product-info">
+            $html .= '<div class="product-info">
                         <h3>
-                            <a href="' + $content['url'] +  '">'  + $content['name'] + '</a>
+                            <a href="' . $detail_url .  '">'  . $name . '</a>
                         </h3>';
-            $html += '<p>Manufactor:' + $content['manufactor'] + '<br/><br/></p></div>';
-            $html += '<div class="product-price"> 
-                    <p>' + $content['price'] +'</p> </div> </li>';
+            $html .= '<p>Manufactor :  ' . $brand . '<br/><br/></p></div>';
+            $html .= '<div class="product-price"> 
+                    <p>' . $price . '</p> </div> </li>';
         }
-        $html += '</ul>
-         <div id="wrap-pages">
-            <div class="left">Page 2 of 16</div>
-            <div class="right">
-              <a href="#" class="previous-button"></a> 
-              <a href="#">1</a>
-              <a href="#">2</a>
-              <a href="#" class="active">3</a>
-              <a href="#">4</a>
-              <a href="#">5</a>
-              <a href="#">6</a>
-              <a href="#" style="border: 0px;">7</a>
-              <a href="#" class="next-button"></a> 
-            </div>
-          </div>';
+
+        $html .= '</ul>
+            <div id="wrap-pages">
+                <div class="left">Page ' . $page_num . ' of '  . $total_page . ' </div>';
+
+        $html .= '<div class="right">';
+        $tmp = $total_page > 10 ? 10 : $total_page;
+        for($i = 1 ; $i <= $tmp; $i++){
+            if($i == $page_num){
+                $html .= '<a href="' . $path . $query_nopage . "page_num=" . $i . '"  class="active"> ' . $i . '</a>';
+            }else{
+                $html .= '<a href="' . $path . $query_nopage . "page_num=" . $i . '"> ' . $i . '</a>';
+            }
+        }
+        $html .= '</div></div> </div> </div> </div>';
     }else{
-        $html += '<div> <p>Sorry, 0 Products Found. </p> </div>';
+        $html .= '<div> <p>Sorry, 0 Products are Found. </p> </div>';
     }
    
     echo $html;
     echo file_get_contents("./public/page/foot.html");
-     //price, brand, price range, sellers
+     //price, brand, price range, seller
+}
+
+function get_empty_page(){
+    echo file_get_contents("./public/page/top.html");
+    $html .= '<div> <p>Sorry, 0 Products are Found. </p> </div>';
+    echo $html;
+    echo file_get_contents("./public/page/foot.html");
 }
 
 function get_data($query = NUL){
-    return json_decode(file_get_contents("./test.json"));
+    return json_decode(file_get_contents("./test.json"), true);
+    // run java here
     // if($query == NULL){
     //     //get ramdom data here
     // }else{

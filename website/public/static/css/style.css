@@ -813,20 +813,27 @@ ul#inline-product-list{
 
 ul#inline-product-list li {
   float: left;
-  width: 680px;
-  padding: 20px;
+  width: 100%;
+  padding: 20px 0 20px 0px;
   border-bottom: 1px solid #dfdfdf;
 }
+
 ul#inline-product-list li .product-photo,
 ul#inline-product-list li .product-photo a,
 ul#inline-product-list li .product-photo a img{
   float: left;
-  width: 90px;
+  margin-left: 10px;
+  margin-top: 5px;
+  /*width: 30%;*/
+}
+
+ul#inline-product-list li .product-photo{
+   width: 30%;
 }
 ul#inline-product-list li .product-info{
   float: left;
-  width: 270px;
-  margin-left: 20px;
+  width: 50%;
+  /*margin-left: 10%;*/
 }
 ul#inline-product-list li .product-info h3{
   float: left;

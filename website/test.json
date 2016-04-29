@@ -1,311 +1,315 @@
-[{
-  "ASIN": "B00009V2QX",
-  "DetailPageURL": "http://www.amazon.com/Duracell-Procell-AA-Pack-PC1500BKD09/dp/B00009V2QX%3Fpsc%3D1%26SubscriptionId%3DAKIAIYF6CVU74YZOOY4A%26tag%3Dlily0c-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00009V2QX",
-  "Manufacturer": "Duracell",
-  "ProductGroup": "BISS",
-  "Title": "Duracell Procell AA 24 Pack PC1500BKD09",
-  "SmallImage": {
-    "URL": "http://ecx.images-amazon.com/images/I/41fZpHzSQWL._SL75_.jpg",
-    "Height": {
-      "#": "31",
-      "@": {
-        "Units": "pixels"
-      }
-    },
-    "Width": {
-      "#": "75",
-      "@": {
-        "Units": "pixels"
-      }
-    }
-  },
-  "Feature": [
-    "Pack of 24 AA Batteries",
-    "10 year shelf life (each battery is individually date coded to ensure freshness and guaranteed fresh for 10 years).",
-    "Reliable operation in temperature between -4F to 129F",
-    "Contains no added mercury - No disposal issues.",
-    "Increased battery life = longer service life, lower operating expenses, and an increase in productivity due to less man hours replacing batteries."
-  ],
-  "LowestNewPrice": {
-    "Amount": "595",
-    "CurrencyCode": "USD",
-    "FormattedPrice": "$5.95"
-  },
-  "CustomerReviews": {
-    "IFrameURL": "http://www.amazon.com/reviews/iframe?akid=AKIAIYF6CVU74YZOOY4A&alinkCode=xm2&asin=B00009V2QX&atag=lily0c-20&exp=2016-04-26T17%3A25%3A21Z&v=2&sig=SaiNsMvWr9CsEbRDuE2AU3%2FqY7%2BxhcIIX9w42o%2Fm2Ss%3D",
-    "HasReviews": "true"
+{
+    "page_number" : "1",
+    "total_items" : "80",
+    "items" : [{
+        "ASIN": "B00009V2QX",
+        "DetailPageURL": "http://www.amazon.com/Duracell-Procell-AA-Pack-PC1500BKD09/dp/B00009V2QX%3Fpsc%3D1%26SubscriptionId%3DAKIAIYF6CVU74YZOOY4A%26tag%3Dlily0c-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00009V2QX",
+        "Manufacturer": "Duracell",
+        "ProductGroup": "BISS",
+        "Title": "Duracell Procell AA 24 Pack PC1500BKD09",
+        "SmallImage": {
+          "URL": "http://ecx.images-amazon.com/images/I/41fZpHzSQWL._SL75_.jpg",
+          "Height": {
+            "#": "31",
+            "@": {
+              "Units": "pixels"
+            }
+          },
+          "Width": {
+            "#": "75",
+            "@": {
+              "Units": "pixels"
+            }
+          }
+        },
+        "Feature": [
+          "Pack of 24 AA Batteries",
+          "10 year shelf life (each battery is individually date coded to ensure freshness and guaranteed fresh for 10 years).",
+          "Reliable operation in temperature between -4F to 129F",
+          "Contains no added mercury - No disposal issues.",
+          "Increased battery life = longer service life, lower operating expenses, and an increase in productivity due to less man hours replacing batteries."
+        ],
+        "LowestNewPrice": {
+          "Amount": "595",
+          "CurrencyCode": "USD",
+          "FormattedPrice": "$5.95"
+        },
+        "CustomerReviews": {
+          "IFrameURL": "http://www.amazon.com/reviews/iframe?akid=AKIAIYF6CVU74YZOOY4A&alinkCode=xm2&asin=B00009V2QX&atag=lily0c-20&exp=2016-04-26T17%3A25%3A21Z&v=2&sig=SaiNsMvWr9CsEbRDuE2AU3%2FqY7%2BxhcIIX9w42o%2Fm2Ss%3D",
+          "HasReviews": "true"
+        }
+      },{
+        "ASIN": "B0035LCFNQ",
+        "DetailPageURL": "http://www.amazon.com/Duracell-Coppertop-AA-Batteries-Count/dp/B0035LCFNQ%3Fpsc%3D1%26SubscriptionId%3DAKIAIYF6CVU74YZOOY4A%26tag%3Dlily0c-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB0035LCFNQ",
+        "Manufacturer": "Duracell",
+        "ProductGroup": "Health and Beauty",
+        "Title": "Duracell Coppertop AA Batteries 24 Count",
+        "Feature": [
+          "Every Duracell is engineered with Duralock Power Preserve, technology inside each battery that helps lock in power",
+          "Now guaranteed for up to 10 years in storage.",
+          "Made in USA",
+          "Every Duracell is engineered with Duralock Power Preserve, technology inside each battery that helps lock in power",
+          "Now guaranteed for up to 10 years in storage.",
+          "Made in USA"
+        ],
+        "LowestNewPrice": {
+          "Amount": "1249",
+          "CurrencyCode": "USD",
+          "FormattedPrice": "$12.49"
+        },
+        "CustomerReviews": {
+          "IFrameURL": "http://www.amazon.com/reviews/iframe?akid=AKIAIYF6CVU74YZOOY4A&alinkCode=xm2&asin=B0035LCFNQ&atag=lily0c-20&exp=2016-04-26T17%3A25%3A21Z&v=2&sig=AWXQZGUgaveogQLx%2FUm6aC9rK1hsW9wblNCH3iXEyuQ%3D",
+          "HasReviews": "true"
+        }
+      },{
+        "ASIN": "B006W9QIM2",
+        "DetailPageURL": "http://www.amazon.com/Duracell-MN1500-Batteries-Pack-Count/dp/B006W9QIM2%3Fpsc%3D1%26SubscriptionId%3DAKIAIYF6CVU74YZOOY4A%26tag%3Dlily0c-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB006W9QIM2",
+        "Manufacturer": "Duracell",
+        "ProductGroup": "Health and Beauty",
+        "Title": "Duracell MN1500 AA Batteries , 100 Pack Count",
+        "SmallImage": {
+          "URL": "http://ecx.images-amazon.com/images/I/41rT5cZWXKL._SL75_.jpg",
+          "Height": {
+            "#": "75",
+            "@": {
+              "Units": "pixels"
+            }
+          },
+          "Width": {
+            "#": "22",
+            "@": {
+              "Units": "pixels"
+            }
+          }
+        },
+        "Feature": [
+          "Same day shipping",
+          "Use By: 2020",
+          "Fresh from the factory",
+          "#1 rated battery"
+        ],
+        "LowestNewPrice": {
+          "Amount": "3010",
+          "CurrencyCode": "USD",
+          "FormattedPrice": "$30.10"
+        },
+        "CustomerReviews": {
+          "IFrameURL": "http://www.amazon.com/reviews/iframe?akid=AKIAIYF6CVU74YZOOY4A&alinkCode=xm2&asin=B006W9QIM2&atag=lily0c-20&exp=2016-04-26T17%3A25%3A21Z&v=2&sig=T7pUnT0ciDZEUYRX3vo68OAL6q6dC%2Bq0gGXLkilOaLc%3D",
+          "HasReviews": "true"
+        }
+      },{
+        "ASIN": "B00G3KQCN0",
+        "DetailPageURL": "http://www.amazon.com/Duracell-AAA-Batteries-Coppertop-MN2400/dp/B00G3KQCN0%3Fpsc%3D1%26SubscriptionId%3DAKIAIYF6CVU74YZOOY4A%26tag%3Dlily0c-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00G3KQCN0",
+        "Manufacturer": "Duracell",
+        "ProductGroup": "Health and Beauty",
+        "Title": "Duracell AAA Batteries Coppertop MN2400 - 20 Pack",
+        "SmallImage": {
+          "URL": "http://ecx.images-amazon.com/images/I/516WUiQ%2BESL._SL75_.jpg",
+          "Height": {
+            "#": "72",
+            "@": {
+              "Units": "pixels"
+            }
+          },
+          "Width": {
+            "#": "75",
+            "@": {
+              "Units": "pixels"
+            }
+          }
+        },
+        "Feature": [
+          "Brand is Duracell",
+          "Brand new bulk packaging (clear plastic bag, no retail packaging)",
+          "Alkaline batteries",
+          "Copper top",
+          "Long lasting"
+        ],
+        "LowestNewPrice": {
+          "Amount": "885",
+          "CurrencyCode": "USD",
+          "FormattedPrice": "$8.85"
+        },
+        "CustomerReviews": {
+          "IFrameURL": "http://www.amazon.com/reviews/iframe?akid=AKIAIYF6CVU74YZOOY4A&alinkCode=xm2&asin=B00G3KQCN0&atag=lily0c-20&exp=2016-04-26T17%3A25%3A21Z&v=2&sig=nkyTeC1yEORv4KdvpKUWuFnikaV%2BbKkL8ZhuooI%2Fa1I%3D",
+          "HasReviews": "true"
+        }
+      },{
+        "ASIN": "B0096MHJVG",
+        "DetailPageURL": "http://www.amazon.com/Duracell-Coppertop-Alkaline-Batteries-Duralock/dp/B0096MHJVG%3Fpsc%3D1%26SubscriptionId%3DAKIAIYF6CVU74YZOOY4A%26tag%3Dlily0c-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB0096MHJVG",
+        "Manufacturer": "Braun Duracell",
+        "ProductGroup": "Health and Beauty",
+        "Title": "Duracell Coppertop Alkaline Batteries With Duralock, AA, 34 Count",
+        "SmallImage": {
+          "URL": "http://ecx.images-amazon.com/images/I/41-D05b32RL._SL75_.jpg",
+          "Height": {
+            "#": "75",
+            "@": {
+              "Units": "pixels"
+            }
+          },
+          "Width": {
+            "#": "75",
+            "@": {
+              "Units": "pixels"
+            }
+          }
+        },
+        "Feature": [
+          "Duracell with Duralock Power Preserve Technology - 10 year guarantee in storage",
+          "Every Duracell is engineered with DuraLock Power Preserve, technology inside each battery that helps lock in power",
+          "Now guaranteed for up to 10 years in storage."
+        ],
+        "LowestNewPrice": {
+          "Amount": "1979",
+          "CurrencyCode": "USD",
+          "FormattedPrice": "$19.79"
+        },
+        "CustomerReviews": {
+          "IFrameURL": "http://www.amazon.com/reviews/iframe?akid=AKIAIYF6CVU74YZOOY4A&alinkCode=xm2&asin=B0096MHJVG&atag=lily0c-20&exp=2016-04-26T17%3A25%3A21Z&v=2&sig=hxenKxw8ALSop8TcmDJhvGgeqfCF53O36GYs4RAB9rc%3D",
+          "HasReviews": "true"
+        }
+      },{
+        "ASIN": "B00007ISWA",
+        "DetailPageURL": "http://www.amazon.com/Duracell-Rechargeable-Batteries-Count-Packaging/dp/B00007ISWA%3Fpsc%3D1%26SubscriptionId%3DAKIAIYF6CVU74YZOOY4A%26tag%3Dlily0c-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00007ISWA",
+        "Manufacturer": "Duracell",
+        "ProductGroup": "Health and Beauty",
+        "Title": "Duracell Rechargeable AA Batteries 4 Count (Packaging May Vary)",
+        "SmallImage": {
+          "URL": "http://ecx.images-amazon.com/images/I/51Wfv8QoqOL._SL75_.jpg",
+          "Height": {
+            "#": "75",
+            "@": {
+              "Units": "pixels"
+            }
+          },
+          "Width": {
+            "#": "62",
+            "@": {
+              "Units": "pixels"
+            }
+          }
+        },
+        "Feature": [
+          "Preserves Power in High Drain Devices.",
+          "Recharge up to 300X.",
+          "You can get 100s of uses out of each Duracell Rechargeable battery."
+        ],
+        "LowestNewPrice": {
+          "Amount": "669",
+          "CurrencyCode": "USD",
+          "FormattedPrice": "$6.69"
+        },
+        "CustomerReviews": {
+          "IFrameURL": "http://www.amazon.com/reviews/iframe?akid=AKIAIYF6CVU74YZOOY4A&alinkCode=xm2&asin=B00007ISWA&atag=lily0c-20&exp=2016-04-26T17%3A25%3A21Z&v=2&sig=m52lhEHD9tRghzjgHYIT7otQRiPayc%2BZ8mPoU8m9qVY%3D",
+          "HasReviews": "true"
+        }
+      },{
+        "ASIN": "B0013DQY4O",
+        "DetailPageURL": "http://www.amazon.com/Duracell-Procell-AAA-Pack-PC2400BKD09/dp/B0013DQY4O%3Fpsc%3D1%26SubscriptionId%3DAKIAIYF6CVU74YZOOY4A%26tag%3Dlily0c-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB0013DQY4O",
+        "Manufacturer": "Duracell",
+        "ProductGroup": "BISS",
+        "Title": "Duracell Procell AAA 24 Pack PC2400BKD09",
+        "SmallImage": {
+          "URL": "http://ecx.images-amazon.com/images/I/513KLhBkiWL._SL75_.jpg",
+          "Height": {
+            "#": "58",
+            "@": {
+              "Units": "pixels"
+            }
+          },
+          "Width": {
+            "#": "75",
+            "@": {
+              "Units": "pixels"
+            }
+          }
+        },
+        "Feature": [
+          "Pack of 24 AAA Batteries",
+          "10 year shelf life (each battery is individually date coded to ensure freshness and guaranteed fresh for 10 years).",
+          "Reliable operation in temperature between -4F to 129F",
+          "Contains no added mercury - No disposal issues.",
+          "Increased battery life = longer service life, lower operating expenses, and an increase in productivity due to less man hours replacing batteries."
+        ],
+        "LowestNewPrice": {
+          "Amount": "675",
+          "CurrencyCode": "USD",
+          "FormattedPrice": "$6.75"
+        },
+        "CustomerReviews": {
+          "IFrameURL": "http://www.amazon.com/reviews/iframe?akid=AKIAIYF6CVU74YZOOY4A&alinkCode=xm2&asin=B0013DQY4O&atag=lily0c-20&exp=2016-04-26T17%3A25%3A21Z&v=2&sig=e8Oyo5oENe5ROsNyjrrC87igSepkw9cYpgCr%2BuLj%2BqY%3D",
+          "HasReviews": "true"
+        }
+      },{
+        "ASIN": "B00EE4VGAG",
+        "DetailPageURL": "http://www.amazon.com/Duracell-Quantum-Alkaline-Batteries-Count/dp/B00EE4VGAG%3Fpsc%3D1%26SubscriptionId%3DAKIAIYF6CVU74YZOOY4A%26tag%3Dlily0c-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00EE4VGAG",
+        "Manufacturer": "Duracell",
+        "ProductGroup": "Health and Beauty",
+        "Title": "Duracell Quantum Alkaline AA Batteries 28 Count",
+        "SmallImage": {
+          "URL": "http://ecx.images-amazon.com/images/I/41YHqZ0SnGL._SL75_.jpg",
+          "Height": {
+            "#": "22",
+            "@": {
+              "Units": "pixels"
+            }
+          },
+          "Width": {
+            "#": "75",
+            "@": {
+              "Units": "pixels"
+            }
+          }
+        },
+        "Feature": [
+          "The Worlds most advanced Alkaline battery (based on hi-density core and powercheck). The only battery with Hi-Density core technology featuring more power boosters to deliver unbeatable long-lasting performance (Vs. Duracell Ultra).",
+          "The only battery with Hi-Density core technology featuring more power boosters to deliver unbeatable long-lasting performance (Vs. Duracell Ultra)",
+          "Exclusive PowerCheck feature lets you instantly check the power level so you can trust it to work when you need it the most."
+        ],
+        "LowestNewPrice": {
+          "Amount": "1999",
+          "CurrencyCode": "USD",
+          "FormattedPrice": "$19.99"
+        },
+        "CustomerReviews": {
+          "IFrameURL": "http://www.amazon.com/reviews/iframe?akid=AKIAIYF6CVU74YZOOY4A&alinkCode=xm2&asin=B00EE4VGAG&atag=lily0c-20&exp=2016-04-26T17%3A25%3A21Z&v=2&sig=iZNh9SJtiXloK6%2BfPXW%2FJSrM%2FmVFx8T7bn0JH7Vv6pg%3D",
+          "HasReviews": "true"
+        }
+      },{
+        "ASIN": "B00JTGH0ZO",
+        "DetailPageURL": "http://www.amazon.com/Duracell-Coppertop-Alkaline-Batteries-DuraLock/dp/B00JTGH0ZO%3FSubscriptionId%3DAKIAIYF6CVU74YZOOY4A%26tag%3Dlily0c-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00JTGH0ZO",
+        "Manufacturer": "Duracell",
+        "ProductGroup": "Health and Beauty",
+        "Title": "Duracell Coppertop Alkaline AA and AAA Batteries with DuraLock, 24 Pack Each",
+        "SmallImage": {
+          "URL": "http://ecx.images-amazon.com/images/I/41a3HrWSw9L._SL75_.jpg",
+          "Height": {
+            "#": "75",
+            "@": {
+              "Units": "pixels"
+            }
+          },
+          "Width": {
+            "#": "48",
+            "@": {
+              "Units": "pixels"
+            }
+          }
+        },
+        "Feature": [
+          "Duracell with duralock power preserve technology - 10 year guarantee in storage",
+          "Every duracell is engineered with duralock power preserve, technology inside each battery that helps lock in power",
+          "Easy to use"
+        ],
+        "LowestNewPrice": {
+          "Amount": "1780",
+          "CurrencyCode": "USD",
+          "FormattedPrice": "$17.80"
+        },
+        "CustomerReviews": {
+          "IFrameURL": "http://www.amazon.com/reviews/iframe?akid=AKIAIYF6CVU74YZOOY4A&alinkCode=xm2&asin=B00JTGH0ZO&atag=lily0c-20&exp=2016-04-26T17%3A25%3A21Z&v=2&sig=REjQtQUH%2FEPVF4Z8hiaXMkmvcLotf5UnapBB89v225c%3D",
+          "HasReviews": "true"
+        }
+      }]
   }
-},{
-  "ASIN": "B0035LCFNQ",
-  "DetailPageURL": "http://www.amazon.com/Duracell-Coppertop-AA-Batteries-Count/dp/B0035LCFNQ%3Fpsc%3D1%26SubscriptionId%3DAKIAIYF6CVU74YZOOY4A%26tag%3Dlily0c-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB0035LCFNQ",
-  "Manufacturer": "Duracell",
-  "ProductGroup": "Health and Beauty",
-  "Title": "Duracell Coppertop AA Batteries 24 Count",
-  "Feature": [
-    "Every Duracell is engineered with Duralock Power Preserve, technology inside each battery that helps lock in power",
-    "Now guaranteed for up to 10 years in storage.",
-    "Made in USA",
-    "Every Duracell is engineered with Duralock Power Preserve, technology inside each battery that helps lock in power",
-    "Now guaranteed for up to 10 years in storage.",
-    "Made in USA"
-  ],
-  "LowestNewPrice": {
-    "Amount": "1249",
-    "CurrencyCode": "USD",
-    "FormattedPrice": "$12.49"
-  },
-  "CustomerReviews": {
-    "IFrameURL": "http://www.amazon.com/reviews/iframe?akid=AKIAIYF6CVU74YZOOY4A&alinkCode=xm2&asin=B0035LCFNQ&atag=lily0c-20&exp=2016-04-26T17%3A25%3A21Z&v=2&sig=AWXQZGUgaveogQLx%2FUm6aC9rK1hsW9wblNCH3iXEyuQ%3D",
-    "HasReviews": "true"
-  }
-},{
-  "ASIN": "B006W9QIM2",
-  "DetailPageURL": "http://www.amazon.com/Duracell-MN1500-Batteries-Pack-Count/dp/B006W9QIM2%3Fpsc%3D1%26SubscriptionId%3DAKIAIYF6CVU74YZOOY4A%26tag%3Dlily0c-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB006W9QIM2",
-  "Manufacturer": "Duracell",
-  "ProductGroup": "Health and Beauty",
-  "Title": "Duracell MN1500 AA Batteries , 100 Pack Count",
-  "SmallImage": {
-    "URL": "http://ecx.images-amazon.com/images/I/41rT5cZWXKL._SL75_.jpg",
-    "Height": {
-      "#": "75",
-      "@": {
-        "Units": "pixels"
-      }
-    },
-    "Width": {
-      "#": "22",
-      "@": {
-        "Units": "pixels"
-      }
-    }
-  },
-  "Feature": [
-    "Same day shipping",
-    "Use By: 2020",
-    "Fresh from the factory",
-    "#1 rated battery"
-  ],
-  "LowestNewPrice": {
-    "Amount": "3010",
-    "CurrencyCode": "USD",
-    "FormattedPrice": "$30.10"
-  },
-  "CustomerReviews": {
-    "IFrameURL": "http://www.amazon.com/reviews/iframe?akid=AKIAIYF6CVU74YZOOY4A&alinkCode=xm2&asin=B006W9QIM2&atag=lily0c-20&exp=2016-04-26T17%3A25%3A21Z&v=2&sig=T7pUnT0ciDZEUYRX3vo68OAL6q6dC%2Bq0gGXLkilOaLc%3D",
-    "HasReviews": "true"
-  }
-},{
-  "ASIN": "B00G3KQCN0",
-  "DetailPageURL": "http://www.amazon.com/Duracell-AAA-Batteries-Coppertop-MN2400/dp/B00G3KQCN0%3Fpsc%3D1%26SubscriptionId%3DAKIAIYF6CVU74YZOOY4A%26tag%3Dlily0c-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00G3KQCN0",
-  "Manufacturer": "Duracell",
-  "ProductGroup": "Health and Beauty",
-  "Title": "Duracell AAA Batteries Coppertop MN2400 - 20 Pack",
-  "SmallImage": {
-    "URL": "http://ecx.images-amazon.com/images/I/516WUiQ%2BESL._SL75_.jpg",
-    "Height": {
-      "#": "72",
-      "@": {
-        "Units": "pixels"
-      }
-    },
-    "Width": {
-      "#": "75",
-      "@": {
-        "Units": "pixels"
-      }
-    }
-  },
-  "Feature": [
-    "Brand is Duracell",
-    "Brand new bulk packaging (clear plastic bag, no retail packaging)",
-    "Alkaline batteries",
-    "Copper top",
-    "Long lasting"
-  ],
-  "LowestNewPrice": {
-    "Amount": "885",
-    "CurrencyCode": "USD",
-    "FormattedPrice": "$8.85"
-  },
-  "CustomerReviews": {
-    "IFrameURL": "http://www.amazon.com/reviews/iframe?akid=AKIAIYF6CVU74YZOOY4A&alinkCode=xm2&asin=B00G3KQCN0&atag=lily0c-20&exp=2016-04-26T17%3A25%3A21Z&v=2&sig=nkyTeC1yEORv4KdvpKUWuFnikaV%2BbKkL8ZhuooI%2Fa1I%3D",
-    "HasReviews": "true"
-  }
-},{
-  "ASIN": "B0096MHJVG",
-  "DetailPageURL": "http://www.amazon.com/Duracell-Coppertop-Alkaline-Batteries-Duralock/dp/B0096MHJVG%3Fpsc%3D1%26SubscriptionId%3DAKIAIYF6CVU74YZOOY4A%26tag%3Dlily0c-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB0096MHJVG",
-  "Manufacturer": "Braun Duracell",
-  "ProductGroup": "Health and Beauty",
-  "Title": "Duracell Coppertop Alkaline Batteries With Duralock, AA, 34 Count",
-  "SmallImage": {
-    "URL": "http://ecx.images-amazon.com/images/I/41-D05b32RL._SL75_.jpg",
-    "Height": {
-      "#": "75",
-      "@": {
-        "Units": "pixels"
-      }
-    },
-    "Width": {
-      "#": "75",
-      "@": {
-        "Units": "pixels"
-      }
-    }
-  },
-  "Feature": [
-    "Duracell with Duralock Power Preserve Technology - 10 year guarantee in storage",
-    "Every Duracell is engineered with DuraLock Power Preserve, technology inside each battery that helps lock in power",
-    "Now guaranteed for up to 10 years in storage."
-  ],
-  "LowestNewPrice": {
-    "Amount": "1979",
-    "CurrencyCode": "USD",
-    "FormattedPrice": "$19.79"
-  },
-  "CustomerReviews": {
-    "IFrameURL": "http://www.amazon.com/reviews/iframe?akid=AKIAIYF6CVU74YZOOY4A&alinkCode=xm2&asin=B0096MHJVG&atag=lily0c-20&exp=2016-04-26T17%3A25%3A21Z&v=2&sig=hxenKxw8ALSop8TcmDJhvGgeqfCF53O36GYs4RAB9rc%3D",
-    "HasReviews": "true"
-  }
-},{
-  "ASIN": "B00007ISWA",
-  "DetailPageURL": "http://www.amazon.com/Duracell-Rechargeable-Batteries-Count-Packaging/dp/B00007ISWA%3Fpsc%3D1%26SubscriptionId%3DAKIAIYF6CVU74YZOOY4A%26tag%3Dlily0c-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00007ISWA",
-  "Manufacturer": "Duracell",
-  "ProductGroup": "Health and Beauty",
-  "Title": "Duracell Rechargeable AA Batteries 4 Count (Packaging May Vary)",
-  "SmallImage": {
-    "URL": "http://ecx.images-amazon.com/images/I/51Wfv8QoqOL._SL75_.jpg",
-    "Height": {
-      "#": "75",
-      "@": {
-        "Units": "pixels"
-      }
-    },
-    "Width": {
-      "#": "62",
-      "@": {
-        "Units": "pixels"
-      }
-    }
-  },
-  "Feature": [
-    "Preserves Power in High Drain Devices.",
-    "Recharge up to 300X.",
-    "You can get 100s of uses out of each Duracell Rechargeable battery."
-  ],
-  "LowestNewPrice": {
-    "Amount": "669",
-    "CurrencyCode": "USD",
-    "FormattedPrice": "$6.69"
-  },
-  "CustomerReviews": {
-    "IFrameURL": "http://www.amazon.com/reviews/iframe?akid=AKIAIYF6CVU74YZOOY4A&alinkCode=xm2&asin=B00007ISWA&atag=lily0c-20&exp=2016-04-26T17%3A25%3A21Z&v=2&sig=m52lhEHD9tRghzjgHYIT7otQRiPayc%2BZ8mPoU8m9qVY%3D",
-    "HasReviews": "true"
-  }
-},{
-  "ASIN": "B0013DQY4O",
-  "DetailPageURL": "http://www.amazon.com/Duracell-Procell-AAA-Pack-PC2400BKD09/dp/B0013DQY4O%3Fpsc%3D1%26SubscriptionId%3DAKIAIYF6CVU74YZOOY4A%26tag%3Dlily0c-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB0013DQY4O",
-  "Manufacturer": "Duracell",
-  "ProductGroup": "BISS",
-  "Title": "Duracell Procell AAA 24 Pack PC2400BKD09",
-  "SmallImage": {
-    "URL": "http://ecx.images-amazon.com/images/I/513KLhBkiWL._SL75_.jpg",
-    "Height": {
-      "#": "58",
-      "@": {
-        "Units": "pixels"
-      }
-    },
-    "Width": {
-      "#": "75",
-      "@": {
-        "Units": "pixels"
-      }
-    }
-  },
-  "Feature": [
-    "Pack of 24 AAA Batteries",
-    "10 year shelf life (each battery is individually date coded to ensure freshness and guaranteed fresh for 10 years).",
-    "Reliable operation in temperature between -4F to 129F",
-    "Contains no added mercury - No disposal issues.",
-    "Increased battery life = longer service life, lower operating expenses, and an increase in productivity due to less man hours replacing batteries."
-  ],
-  "LowestNewPrice": {
-    "Amount": "675",
-    "CurrencyCode": "USD",
-    "FormattedPrice": "$6.75"
-  },
-  "CustomerReviews": {
-    "IFrameURL": "http://www.amazon.com/reviews/iframe?akid=AKIAIYF6CVU74YZOOY4A&alinkCode=xm2&asin=B0013DQY4O&atag=lily0c-20&exp=2016-04-26T17%3A25%3A21Z&v=2&sig=e8Oyo5oENe5ROsNyjrrC87igSepkw9cYpgCr%2BuLj%2BqY%3D",
-    "HasReviews": "true"
-  }
-},{
-  "ASIN": "B00EE4VGAG",
-  "DetailPageURL": "http://www.amazon.com/Duracell-Quantum-Alkaline-Batteries-Count/dp/B00EE4VGAG%3Fpsc%3D1%26SubscriptionId%3DAKIAIYF6CVU74YZOOY4A%26tag%3Dlily0c-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00EE4VGAG",
-  "Manufacturer": "Duracell",
-  "ProductGroup": "Health and Beauty",
-  "Title": "Duracell Quantum Alkaline AA Batteries 28 Count",
-  "SmallImage": {
-    "URL": "http://ecx.images-amazon.com/images/I/41YHqZ0SnGL._SL75_.jpg",
-    "Height": {
-      "#": "22",
-      "@": {
-        "Units": "pixels"
-      }
-    },
-    "Width": {
-      "#": "75",
-      "@": {
-        "Units": "pixels"
-      }
-    }
-  },
-  "Feature": [
-    "The Worlds most advanced Alkaline battery (based on hi-density core and powercheck). The only battery with Hi-Density core technology featuring more power boosters to deliver unbeatable long-lasting performance (Vs. Duracell Ultra).",
-    "The only battery with Hi-Density core technology featuring more power boosters to deliver unbeatable long-lasting performance (Vs. Duracell Ultra)",
-    "Exclusive PowerCheck feature lets you instantly check the power level so you can trust it to work when you need it the most."
-  ],
-  "LowestNewPrice": {
-    "Amount": "1999",
-    "CurrencyCode": "USD",
-    "FormattedPrice": "$19.99"
-  },
-  "CustomerReviews": {
-    "IFrameURL": "http://www.amazon.com/reviews/iframe?akid=AKIAIYF6CVU74YZOOY4A&alinkCode=xm2&asin=B00EE4VGAG&atag=lily0c-20&exp=2016-04-26T17%3A25%3A21Z&v=2&sig=iZNh9SJtiXloK6%2BfPXW%2FJSrM%2FmVFx8T7bn0JH7Vv6pg%3D",
-    "HasReviews": "true"
-  }
-},{
-  "ASIN": "B00JTGH0ZO",
-  "DetailPageURL": "http://www.amazon.com/Duracell-Coppertop-Alkaline-Batteries-DuraLock/dp/B00JTGH0ZO%3FSubscriptionId%3DAKIAIYF6CVU74YZOOY4A%26tag%3Dlily0c-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00JTGH0ZO",
-  "Manufacturer": "Duracell",
-  "ProductGroup": "Health and Beauty",
-  "Title": "Duracell Coppertop Alkaline AA and AAA Batteries with DuraLock, 24 Pack Each",
-  "SmallImage": {
-    "URL": "http://ecx.images-amazon.com/images/I/41a3HrWSw9L._SL75_.jpg",
-    "Height": {
-      "#": "75",
-      "@": {
-        "Units": "pixels"
-      }
-    },
-    "Width": {
-      "#": "48",
-      "@": {
-        "Units": "pixels"
-      }
-    }
-  },
-  "Feature": [
-    "Duracell with duralock power preserve technology - 10 year guarantee in storage",
-    "Every duracell is engineered with duralock power preserve, technology inside each battery that helps lock in power",
-    "Easy to use"
-  ],
-  "LowestNewPrice": {
-    "Amount": "1780",
-    "CurrencyCode": "USD",
-    "FormattedPrice": "$17.80"
-  },
-  "CustomerReviews": {
-    "IFrameURL": "http://www.amazon.com/reviews/iframe?akid=AKIAIYF6CVU74YZOOY4A&alinkCode=xm2&asin=B00JTGH0ZO&atag=lily0c-20&exp=2016-04-26T17%3A25%3A21Z&v=2&sig=REjQtQUH%2FEPVF4Z8hiaXMkmvcLotf5UnapBB89v225c%3D",
-    "HasReviews": "true"
-  }
-}]

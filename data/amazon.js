@@ -4,16 +4,15 @@
 
 var async = require("async");
 var fs = require('fs');
-
-var AWSAccessKeyId = ""
-var Associates_ID = ""
-var AWSSecretKey = ""
+var AWSAccessKeyId = "AKIAIYF6CVU74YZOOY4A"
+var Associates_ID = "lily0c-20"
+var AWSSecretKey = "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"
 
 var aws = require("aws-lib");
 var prodAdv = aws.createProdAdvClient(AWSAccessKeyId, AWSSecretKey, Associates_ID);
 
 //read search index list from item/*.json
-var Search_Index_list = JSON.parse(fs.readFileSync("./item/10.json", "utf-8"));
+var Search_Index_list = JSON.parse(fs.readFileSync("./item/7.json", "utf-8"));
 
 op1 = {};
 op1.SearchIndex = "Electronics";
@@ -50,26 +49,33 @@ op_tmp.forEach(function(o){
 	    		}else{
 	    			console.log("======  " + option.Keywords)
 					// console.log(result);
-					items = result.Items.Item;
-					//10 items here, amazon only return 10 items in one page
-					for(var j = 0; j < items.length; j++){
-						items_new = {}
-						items_new.ASIN = items[j].ASIN;
-						items_new.DetailPageURL = items[j].DetailPageURL;
-						items_new.Manufacturer = items[j].ItemAttributes.Manufacturer;
-						items_new.ProductGroup = items[j].ItemAttributes.ProductGroup;
-						items_new.Title = items[j].ItemAttributes.Title;
-						items_new.SmallImage = items[j].SmallImage;
-						items_new.Feature = items[j].ItemAttributes.Feature;
-						items_new.LowestNewPrice = items[j].OfferSummary.LowestNewPrice;
-						items_new.CustomerReviews = items[j].CustomerReviews;
-						// if( !(items[j].ASIN in hash)){
-						// 	hash[items[j].ASIN] = 1; 
-						// 	ret.push(items_new);
-						// }
-						fs.appendFileSync('./tmp10.json', JSON.stringify(items_new, null, 2) + ",", 'utf-8');
+					if(!("Item" in result.Items)){
+						cb(null, null);
+					}else{
+						items = result.Items.Item;
+						//10 items here, amazon only return 10 items in one page
+						for(var j = 0; j < items.length; j++){
+							items_new = {}
+							items_new.ASIN = items[j].ASIN;
+							items_new.DetailPageURL = items[j].DetailPageURL;
+							items_new.Manufacturer = items[j].ItemAttributes.Manufacturer;
+							items_new.ProductGroup = items[j].ItemAttributes.ProductGroup;
+							items_new.Title = items[j].ItemAttributes.Title;
+							items_new.SmallImage = items[j].SmallImage;
+							items_new.MediumImage = items[j].MediumImage;
+							items_new.LargeImage = items[j].LargeImage;
+							items_new.Feature = items[j].ItemAttributes.Feature;
+							items_new.ListPrice = items[j].ItemAttributes.ListPrice;
+							items_new.CustomerReviews = items[j].CustomerReviews;
+							// if( !(items[j].ASIN in hash)){
+							// 	hash[items[j].ASIN] = 1; 
+							// 	ret.push(items_new);
+							// }
+							fs.appendFileSync('./tmp7.json', JSON.stringify(items_new, null, 2) + ",", 'utf-8');
+						}
+						cb(null, " ");
 					}
-					cb(null, " ");
+					
 	    		}	
             });
         }, 500);
