@@ -4,15 +4,15 @@
 
 var async = require("async");
 var fs = require('fs');
-var AWSAccessKeyId = "AKIAIYF6CVU74YZOOY4A"
-var Associates_ID = "lily0c-20"
-var AWSSecretKey = "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"
+var AWSAccessKeyId = ""
+var Associates_ID = ""
+var AWSSecretKey = ""
 
 var aws = require("aws-lib");
 var prodAdv = aws.createProdAdvClient(AWSAccessKeyId, AWSSecretKey, Associates_ID);
 
 //read search index list from item/*.json
-var Search_Index_list = JSON.parse(fs.readFileSync("./item/7.json", "utf-8"));
+var Search_Index_list = JSON.parse(fs.readFileSync("./item/10.json", "utf-8"));
 
 op1 = {};
 op1.SearchIndex = "Electronics";
@@ -71,7 +71,7 @@ op_tmp.forEach(function(o){
 							// 	hash[items[j].ASIN] = 1; 
 							// 	ret.push(items_new);
 							// }
-							fs.appendFileSync('./tmp7.json', JSON.stringify(items_new, null, 2) + ",", 'utf-8');
+							fs.appendFileSync('./tmp10.json', JSON.stringify(items_new, null, 2) + ",", 'utf-8');
 						}
 						cb(null, " ");
 					}
