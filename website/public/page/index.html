@@ -136,9 +136,13 @@
     event.preventDefault();
 
     var paras = "";
-    paras += "query="+ $('#search_field').val();
-    // paras['query'] = $('#search_field').val();
-    // paras['brand'] = paras['price'] = paras['seller'] = "";
+    var q = $('#search_field').val();
+    q = q.replace(/\s+/, "+");
+    if(q.length == 0){
+      return;
+    }
+
+    paras += "query="+ q;
 
     var b = $("#brand-form input:checked");
     if(b.length != 0){
@@ -147,7 +151,7 @@
           if(i == (b.length - 1) ){
             paras += $(b[i]).val();
           }else{
-            paras += ($(b[i]).val() + "+");
+            paras += ($(b[i]).val() + ",");
           }
       }
     }
@@ -172,11 +176,11 @@
         if(i == (s.length - 1) ){
           paras += $(s[i]).val();
         }else{
-          paras += $([i]).val() + "+";
+          paras += $([i]).val() + ",";
         }
       }
     }
-    
+
     $('#main-search-form').attr('action', "/page/detail.html?" + paras).submit();
    
   });

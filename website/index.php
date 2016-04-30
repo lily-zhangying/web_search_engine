@@ -174,9 +174,9 @@ function render_detail($data=[],  $query_nopage=""){
         $tmp = $total_page > 10 ? 10 : $total_page;
         for($i = 1 ; $i <= $tmp; $i++){
             if($i == $page_num){
-                $html .= '<a href="' . $path . $query_nopage . "page_num=" . $i . '"  class="active"> ' . $i . '</a>';
+                $html .= '<a href="' . $path . '?'. $query_nopage . "page_num=" . $i . '"  class="active"> ' . $i . '</a>';
             }else{
-                $html .= '<a href="' . $path . $query_nopage . "page_num=" . $i . '"> ' . $i . '</a>';
+                $html .= '<a href="' . $path . '?' . $query_nopage . "page_num=" . $i . '"> ' . $i . '</a>';
             }
         }
         $html .= '</div></div> </div> </div> </div>';
@@ -186,7 +186,6 @@ function render_detail($data=[],  $query_nopage=""){
    
     echo $html;
     echo file_get_contents("./public/page/foot.html");
-     //price, brand, price range, seller
 }
 
 function get_empty_page(){

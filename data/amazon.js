@@ -4,6 +4,7 @@
 
 var async = require("async");
 var fs = require('fs');
+
 var AWSAccessKeyId = ""
 var Associates_ID = ""
 var AWSSecretKey = ""
@@ -12,7 +13,7 @@ var aws = require("aws-lib");
 var prodAdv = aws.createProdAdvClient(AWSAccessKeyId, AWSSecretKey, Associates_ID);
 
 //read search index list from item/*.json
-var Search_Index_list = JSON.parse(fs.readFileSync("./item/10.json", "utf-8"));
+var Search_Index_list = JSON.parse(fs.readFileSync("./item/1.json", "utf-8"));
 
 op1 = {};
 op1.SearchIndex = "Electronics";
@@ -43,7 +44,7 @@ op_tmp.forEach(function(o){
 		 	var option = op1;
 		 	option.Keywords = o;
             prodAdv.call("ItemSearch", option, function(err, result){	
-            	if("Items" in result && "Request" in result.Items && "Errors" in result.Items.Request){
+            	if(result && "Items" in result && "Request" in result.Items && "Errors" in result.Items.Request){
 	    			console.log(result.Items.Request.Errors);
 	    			cb(null, null);
 	    		}else{
@@ -66,12 +67,14 @@ op_tmp.forEach(function(o){
 							items_new.LargeImage = items[j].LargeImage;
 							items_new.Feature = items[j].ItemAttributes.Feature;
 							items_new.ListPrice = items[j].ItemAttributes.ListPrice;
+							items_new.LowestNewPrice = items[j].OfferSummary.LowestNewPrice;
+							items_new.LowestUsedPrice = items[j].OfferSummary.LowestUsedPrice;
 							items_new.CustomerReviews = items[j].CustomerReviews;
 							// if( !(items[j].ASIN in hash)){
 							// 	hash[items[j].ASIN] = 1; 
 							// 	ret.push(items_new);
 							// }
-							fs.appendFileSync('./tmp10.json', JSON.stringify(items_new, null, 2) + ",", 'utf-8');
+							fs.appendFileSync('./tmp1.json', JSON.stringify(items_new, null, 2) + ",", 'utf-8');
 						}
 						cb(null, " ");
 					}
