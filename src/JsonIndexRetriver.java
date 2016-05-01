@@ -42,7 +42,7 @@ public class JsonIndexRetriver {
 		sourceFlag = false;
 		priceFlag = false;
 
-		String index = "indexDir/indexDir";
+		String index = "indexDir";
 		String defaultFields = "name,regularPrice,url,image,longDescription,shortDescription,manufacturer";
 		/*
 		 * By default, if -field not in parameter, use all fields inputFields[0]

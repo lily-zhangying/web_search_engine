@@ -196,7 +196,7 @@ function get_empty_page(){
 }
 
 function get_data($query){
-    $command = 'java -cp "../wse/lucene-analyzers-common-5.4.1.jar:../wse/lucene-core-5.4.1.jar:../wse/lucene-queryparser-5.4.1.jar:../wse/json-simple-1.1.jar:../wse/SearchEngine.jar:." SearchEngine ';
+    $command = 'java -cp "../src/lucene-analyzers-common-5.4.1.jar:../src/lucene-core-5.4.1.jar:../src/lucene-queryparser-5.4.1.jar:../src/json-simple-1.1.jar:../src/SearchEngine.jar:." SearchEngine ';
     $command .= $query;
     $result = exec($command);
     return json_decode($result, true);
