@@ -19,6 +19,7 @@ Build the jar file  and run
   ```
 
   * web site also use these command lines and display the result in web page
+  * The index files are in website/indexDir 
 
 
 ## Front-end
@@ -29,7 +30,7 @@ Build the jar file  and run
   ```bash
   cd website
   php index.php 
-  
+
   starting server on port 8888
 
   ```
