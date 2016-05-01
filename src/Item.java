@@ -1,5 +1,3 @@
-// package finalProject;
-
 import java.util.Comparator;
 
 public class Item implements Comparable<Item> {
@@ -11,6 +9,7 @@ public class Item implements Comparable<Item> {
   private String url;
   private String imageURL;
   private String manufactor;
+  private int index;
 
   public Item(int numOfQueries) {
     score = 0;
@@ -40,23 +39,27 @@ public class Item implements Comparable<Item> {
     return manufactor;
   }
 
-  public void setIndex(int index) {
+  public double getScore() {
+    return score;
+  }
+
+  public void setQIndex(int index) {
     qIndex[index] = 1;
   }
 
   public void setName(String n) {
-    if ( n == null) {
+    if (n == null) {
       name = "";
     } else {
       name = n;
-    }    
+    }
   }
 
   public void setPrice(String p) {
-    if ( p == null) {
-      price  = 0;
+    if (p == null) {
+      price = 0;
       return;
-    } 
+    }
     if (p.charAt(0) == '$') {
       p = p.substring(1, p.length());
     }
@@ -64,23 +67,23 @@ public class Item implements Comparable<Item> {
       price = Double.parseDouble(p);
     } catch (NumberFormatException e) {
       price = 0;
-    }    
+    }
   }
 
   public void setUrl(String u) {
-    if ( u == null) {
+    if (u == null) {
       url = "";
     } else {
       url = u;
-    }    
+    }
   }
 
   public void setIamge(String u) {
-    if ( u == null){
+    if (u == null) {
       imageURL = "";
     } else {
       imageURL = u;
-    }    
+    }
   }
 
   public void setManufactor(String brand) {
@@ -97,18 +100,27 @@ public class Item implements Comparable<Item> {
   public void updateScore(double[] weight) {
     int length = qIndex.length;
     if (weight.length != qIndex.length) {
- //     throw new IllegalArgumentException("Weight array must have same length with queries! ");
+      // throw new IllegalArgumentException("Weight array must have same length with queries! ");
       length = Math.min(weight.length, qIndex.length);
     }
+    score = 0; // in case updateScore method was called multiple times with different weight
+               // each time before calculation, need to set the score to 0
     for (int i = 0; i < length; i++) {
       score += qIndex[i] * weight[i];
     }
   }
 
+  public void setArrayIndex(int in) {
+    index = in;
+  }
+
   @Override
   public int compareTo(Item o) {
     // TODO Auto-generated method stub
-    return this.score >= o.score ? 1 : -1;
+    if (this.score == o.score) {
+      return this.index > o.index ? 1 : -1;
+    }
+    return this.score > o.score ? -1 : 1;
   }
 
   @Override
@@ -137,7 +149,10 @@ public class Item implements Comparable<Item> {
 
   public static Comparator<Item> PriceComparator = new Comparator<Item>() {
     public int compare(Item it1, Item it2) {
-      return it1.price <= it2.price ? 1 : -1;
+      if (it1.price == it2.price) {
+        return it1.index > it2.index ? 1 : -1;
+      }
+      return it1.price > it2.price ? 1 : -1;
     }
   };
 
