@@ -29,6 +29,8 @@ Build the jar file  and run
   ```bash
   cd website
   php index.php 
+  
+  starting server on port 8888
 
   ```
   * Open webserver, visit http://localhost:8888/ to main page our our website
