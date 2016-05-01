@@ -11,19 +11,23 @@ if($scriptInvokedFromCli) {
     echo 'starting server on port '. $port . PHP_EOL;
     exec('php -S localhost:'. $port . ' -t public index.php');
 } else {
-    return routeRequest();
+    $user = "~zy674";
+    return routeRequest($user);
 }
+//user here to make the code run on linux machine
+//need to match the url rule in courant machine
 
-function routeRequest() {
+function routeRequest($user) {
     $root = dirname(__FILE__) . DIRECTORY_SEPARATOR;
-    //todo in linux , remove split[0] which is ~zy674
     $path = $_SERVER['REQUEST_URI'];
-    $split = explode('/', $path);
-
-    if($path === "/"){
+    //romove user in here
+    $new_path = str_replace($user . "/", "", $path);
+    $split = explode('/', $new_path);
+ 
+    if($new_path == "/"){
         render("./public/page/index.html");
     }elseif('static' === $split[1]){
-        $file = $root . "public/" . substr($path, 1);
+        $file = $root . "public/" . substr($new_path, 1);
         if(is_file($file)){
             $content_type = 'Content-Type: ';
             $pos = strrpos($file, '.');
@@ -89,9 +93,10 @@ function routeRequest() {
             echo "404 Page Not Found";
         }
     }elseif('page' === $split[1] && strpos($split[2], "detail.html") !== false){
-        $file = $root . "public/" . substr($path, 1);
-        if(($pos = strpos($path, '?')) !== false){
-            $query = substr($path, $pos+1);
+        $file = $root . "public/" . substr($new_path, 1);
+        $url = "/" . $user . "/page/detail.html";
+        if(($pos = strpos($new_path, '?')) !== false){
+            $query = substr($new_path, $pos+1);
             $query_split = explode('&', $query);
             $paras = "";
             $query_nopage = "";
@@ -106,9 +111,9 @@ function routeRequest() {
             }
             //@TODO use paramerter to run java here
             $data = get_data($paras);
-            render_detail($data, $query_nopage);
+            render_detail($url, $data, $query_nopage);
         }else{
-            render_detail();
+            render_detail($url);
         }
     }else{
         $file = $root . "public/" . substr($path, 1);
@@ -126,14 +131,13 @@ function render($page, $data = NULL){
     echo file_get_contents("./public/page/foot.html");
 }
 
-function render_detail($data=[],  $query_nopage=""){
-    if(count($data) == 0){
+function render_detail($path, $data = NULL,  $query_nopage=""){
+    if($data == NULL){
         return get_empty_page();
     }
-    $path = "/page/detail.html";
     $content = $data['items'];
     $page_num = intval($data['page_number']);
-    $total_page = intval($data['total_items']) / 10;
+    $total_page = intval(intval($data['total_items']) / 10);
 
     echo file_get_contents("./public/page/top.html");
     //render html here
