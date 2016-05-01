@@ -7,7 +7,7 @@ Build the jar file  and run
 
 * Build Jar File
   ```bash
-  cd wse
+  cd src
 
   javac -cp "./lucene-core-5.4.1.jar:./lucene-queryparser-5.4.1.jar:./lucene-analyzers-common-5.4.1.jar:./json-simple-1.1.jar:." *.java
 
