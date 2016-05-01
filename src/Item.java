@@ -1,4 +1,3 @@
-// package finalProject;
 
 import java.util.Comparator;
 
@@ -11,6 +10,7 @@ public class Item implements Comparable<Item> {
   private String url;
   private String imageURL;
   private String manufactor;
+  private int index;
 
   public Item(int numOfQueries) {
     score = 0;
@@ -40,7 +40,7 @@ public class Item implements Comparable<Item> {
     return manufactor;
   }
 
-  public void setIndex(int index) {
+  public void setQIndex(int index) {
     qIndex[index] = 1;
   }
 
@@ -104,11 +104,18 @@ public class Item implements Comparable<Item> {
       score += qIndex[i] * weight[i];
     }
   }
+  
+  public void setArrayIndex(int in) {
+    index = in;
+  }
 
   @Override
   public int compareTo(Item o) {
     // TODO Auto-generated method stub
-    return this.score >= o.score ? 1 : -1;
+    if (this.score == o.score) {
+      return this.index > o.index ? 1 : -1;
+    }
+    return this.score > o.score ? -1 : 1;
   }
 
   @Override
@@ -137,7 +144,10 @@ public class Item implements Comparable<Item> {
 
   public static Comparator<Item> PriceComparator = new Comparator<Item>() {
     public int compare(Item it1, Item it2) {
-      return it1.price <= it2.price ? 1 : -1;
+      if (it1.price == it2.price) {
+        return it1.index > it2.index ? 1 : -1;
+      }
+      return it1.price > it2.price ? 1 : -1;
     }
   };
 

@@ -1,4 +1,3 @@
-// package finalProject;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -13,7 +12,8 @@ import org.json.simple.JSONObject;
 public class SearchEngine {
 
   private double[] weight;
-  private Map<Item, Item> result = new HashMap<Item, Item>();
+  private Map<Item, Integer> result = new HashMap<Item, Integer>();
+  private List<Item> finalList = new ArrayList<Item>();
   private String[] queryWord;
   private boolean byPrice;
   private boolean manuFlag;
@@ -23,13 +23,14 @@ public class SearchEngine {
   private boolean priceFlag;
   private double lowRange;
   private double highRange;
+  private String dir;
   private int pageNum;
   public static int numPerPage = 10;
 
 
   public SearchEngine(String[] args) {
     String usage =
-        "Usage:\tjava SearchEngine [-query string] [-brand string] [-price string] [-seller string] [-page_num string] [-priceRank]\n\n";
+        "Usage:\tjava SearchEngine [-index dir] [-query string] [-brand string] [-price string] [-seller string] [-page_num string] [-priceRank]\n\n";
     if (args.length == 0 || (args.length > 0 && ("-h".equals(args[0]) || "-help".equals(args[0])))) {
       System.out.println(usage);
       System.exit(0);
@@ -40,8 +41,12 @@ public class SearchEngine {
     lowRange = -1;
     highRange = -1;
     pageNum = 1;
+    dir = null;
     for (int i = 0; i < args.length; i++) {
-      if ("-query".equals(args[i])) {
+      if ("-index".equals(args[i])) {
+        dir = args[i+1];
+        i++;
+      } else if ("-query".equals(args[i])) {
         String queries = args[i+1];
         i++;
         queryWord = queries.split("\\+");       
@@ -80,8 +85,7 @@ public class SearchEngine {
       } else if ("-priceRank".equals(args[i])) {
         byPrice = true;
       }
-    }
-    
+    }   
     weight = new double[queryWord.length];
     for (int i = 0; i<queryWord.length; i++) {
       weight[i] = queryWord.length - i;
@@ -92,6 +96,10 @@ public class SearchEngine {
     List<String> query = new ArrayList<String> ();
     query.add("-query");
     query.add("temp");
+    if (dir != null){
+      query.add("-index");
+      query.add(dir);
+    }
     if (manuFlag) {
       query.add("-manufacturer");
       query.add(manufactories);
@@ -105,14 +113,15 @@ public class SearchEngine {
       query.add(Double.toString(lowRange));
       query.add(Double.toString(highRange));
     }
-/*    
+ /*   
     for (String str : query) {
       System.out.println(str);
-    } 
-    */
+    }  */
+//    System.out.println("length: " + queryWord.length);
+    int count = 0;
     for (int i = 0; i < queryWord.length; i++) {
       String[] arg = query.toArray(new String[queryWord.length]);
-      arg[1] = queryWord[i];
+      arg[1] = queryWord[i];     
       List<Document> retrievedResult = new JsonIndexRetriver(arg).getDocArray();
       for (Document doc : retrievedResult) {
         Item it = new Item(queryWord.length);
@@ -120,15 +129,16 @@ public class SearchEngine {
         it.setPrice(doc.get("regularPrice"));
         it.setUrl(doc.get("url"));
         it.setIamge(doc.get("image"));
-        it.setManufactor(doc.get("manufacturer"));
+        it.setManufactor(doc.get("manufacturer"));       
         if ((!result.isEmpty()) && result.containsKey(it)) {
-          Item another = result.get(it);
-          result.remove(it);
-          another.setIndex(i); // Here is the most important part for debug
-          result.put(another, another);
+          Item another = finalList.get(result.get(it));
+          another.setQIndex(i); // Here is the most important part for debug
         } else {
-          it.setIndex(i);
-          result.put(it, it);
+          it.setQIndex(i);
+          it.setArrayIndex(count);
+          finalList.add(count, it);
+          result.put(it, count); 
+          count ++ ;
         }
       }
     }
@@ -136,7 +146,6 @@ public class SearchEngine {
 
   public String getResult() throws Exception {
     runEngine();
-    List<Item> finalList = new ArrayList<Item>(result.values());
     if (byPrice) {
       Collections.sort(finalList, Item.PriceComparator);
     } else {
