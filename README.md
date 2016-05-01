@@ -5,7 +5,7 @@
 ## Back-end
 Build the jar file  and run 
 
-* Build Jar File (for Windows OS, change ':' to ';'
+* Build Jar File (for Windows OS, change ':' to ';' )
   ```bash
   cd src
 
@@ -14,7 +14,7 @@ Build the jar file  and run
   jar cf SearchEngine.jar *.class
 
  //test command line
- java -cp "./lucene-analyzers-common-5.4.1.jar:lucene-core-5.4.1.jar:lucene-queryparser-5.4.1.jar:json-simple-1.1.jar:SearchEngine.jar:." SearchEngine -query apple -index ./website/indexDir
+ java -cp "./lucene-analyzers-common-5.4.1.jar:lucene-core-5.4.1.jar:lucene-queryparser-5.4.1.jar:json-simple-1.1.jar:SearchEngine.jar:." SearchEngine -query apple+phone -index ./website/indexDir
 
   ```
 
