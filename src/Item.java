@@ -1,4 +1,3 @@
-
 import java.util.Comparator;
 
 public class Item implements Comparable<Item> {
@@ -40,23 +39,27 @@ public class Item implements Comparable<Item> {
     return manufactor;
   }
 
+  public double getScore() {
+    return score;
+  }
+
   public void setQIndex(int index) {
     qIndex[index] = 1;
   }
 
   public void setName(String n) {
-    if ( n == null) {
+    if (n == null) {
       name = "";
     } else {
       name = n;
-    }    
+    }
   }
 
   public void setPrice(String p) {
-    if ( p == null) {
-      price  = 0;
+    if (p == null) {
+      price = 0;
       return;
-    } 
+    }
     if (p.charAt(0) == '$') {
       p = p.substring(1, p.length());
     }
@@ -64,23 +67,23 @@ public class Item implements Comparable<Item> {
       price = Double.parseDouble(p);
     } catch (NumberFormatException e) {
       price = 0;
-    }    
+    }
   }
 
   public void setUrl(String u) {
-    if ( u == null) {
+    if (u == null) {
       url = "";
     } else {
       url = u;
-    }    
+    }
   }
 
   public void setIamge(String u) {
-    if ( u == null){
+    if (u == null) {
       imageURL = "";
     } else {
       imageURL = u;
-    }    
+    }
   }
 
   public void setManufactor(String brand) {
@@ -97,14 +100,16 @@ public class Item implements Comparable<Item> {
   public void updateScore(double[] weight) {
     int length = qIndex.length;
     if (weight.length != qIndex.length) {
- //     throw new IllegalArgumentException("Weight array must have same length with queries! ");
+      // throw new IllegalArgumentException("Weight array must have same length with queries! ");
       length = Math.min(weight.length, qIndex.length);
     }
+    score = 0; // in case updateScore method was called multiple times with different weight
+               // each time before calculation, need to set the score to 0
     for (int i = 0; i < length; i++) {
       score += qIndex[i] * weight[i];
     }
   }
-  
+
   public void setArrayIndex(int in) {
     index = in;
   }
@@ -154,7 +159,7 @@ public class Item implements Comparable<Item> {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    // using format do you want
+    // what format do you want?
     sb.append(name);
     sb.append(",$");
     sb.append(price);
