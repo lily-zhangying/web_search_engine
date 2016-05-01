@@ -154,7 +154,7 @@ public class Item implements Comparable<Item> {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    // what format do you want?
+    // using format do you want
     sb.append(name);
     sb.append(",$");
     sb.append(price);
