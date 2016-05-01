@@ -5,7 +5,7 @@
 ## Back-end
 Build the jar file  and run 
 
-* Build Jar File
+* Build Jar File (for Windows OS, change ':' to ';'
   ```bash
   cd src
 
