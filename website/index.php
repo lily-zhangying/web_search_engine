@@ -15,7 +15,6 @@ if($scriptInvokedFromCli) {
     return routeRequest($user);
 }
 //user here to make the code run on linux machine
-//need to match the url rule in courant machine
 
 function routeRequest($user) {
     $root = dirname(__FILE__) . DIRECTORY_SEPARATOR;

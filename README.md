@@ -14,7 +14,7 @@ Build the jar file  and run
   jar cf SearchEngine.jar *.class
 
  //test command line
- java -cp "./lucene-analyzers-common-5.4.1.jar:lucene-core-5.4.1.jar:lucene-queryparser-5.4.1.jar:json-simple-1.1.jar:SearchEngine.jar:." SearchEngine -query apple+phone -index ./website/indexDir
+ java -cp "./lucene-analyzers-common-5.4.1.jar:lucene-core-5.4.1.jar:lucene-queryparser-5.4.1.jar:json-simple-1.1.jar:SearchEngine.jar:." SearchEngine -query apple+phone -index ../website/indexDir
 
   ```
 
@@ -23,8 +23,12 @@ Build the jar file  and run
 
 ## Front-end
   * We use php, html, css, javascript, JQuery to build our website.
-  * To make our website run, we need one server machine support php. 
+  * To make our website run, we need one  machine support php. 
   * Put our website directory in the server machine, then run our index.php. it will listen to port 8888.
-  * Open webserver, visit http://localhost:8888/ or http://(server_ip):8888/ to main page our our website
 
+  ```bash
+  cd website
+  php index.php 
 
+  ```
+  * Open webserver, visit http://localhost:8888/ to main page our our website
