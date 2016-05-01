@@ -122,9 +122,9 @@
           </div>
           <div class="block-content" style="padding: 0 0 10px;">
             <form id="seller-form" action="" method="post">
-              <div class="checkline"><input type="checkbox" name="price" value="Amazon" /><span>Amazon</span></div>
-              <div class="checkline"><input type="checkbox" name="price" value="BestBuy" /><span>BestBuy</span></div>
-              <div class="checkline" style="border: 0px;"><input type="checkbox" name="price" value="NewEgg" /><span>NewEgg</span></div>
+              <div class="checkline"><input type="checkbox" name="" value="Amazon" /><span>Amazon</span></div>
+              <div class="checkline"><input type="checkbox" name="" value="BestBuy" /><span>BestBuy</span></div>
+              <div class="checkline" style="border: 0px;"><input type="checkbox" name="" value="NewEgg" /><span>NewEgg</span></div>
             </form>
           </div>
         </div>
@@ -176,7 +176,7 @@
         if(i == (s.length - 1) ){
           paras += $(s[i]).val();
         }else{
-          paras += $([i]).val() + ",";
+          paras += $(s[i]).val() + ",";
         }
       }
     }

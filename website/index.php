@@ -144,14 +144,14 @@ function render_detail($data=[],  $query_nopage=""){
                         <h1 class="nice-title">Products List</h1>
                       </div>
                       <ul id="inline-product-list"> ';
-
+    $content = json_decode($content, true);
     if(count($content) > 0){
         foreach ($content as $key => $value) {
-            $name = $value['Title'];
-            $brand = $value['Manufacturer'];
-            $price = $value['LowestNewPrice']['FormattedPrice'];
-            $detail_url = $value['DetailPageURL'];
-            $img_url = $value['SmallImage']['URL'];
+            $name = $value['name'];
+            $brand = $value['brand'];
+            $price = $value['price'];
+            $detail_url = $value['url'];
+            $img_url = $value['image'];
 
             $html .= '<li>
                   <div class="product-photo"><a href="' . $detail_url . '">
@@ -195,12 +195,9 @@ function get_empty_page(){
     echo file_get_contents("./public/page/foot.html");
 }
 
-function get_data($query = NUL){
-    return json_decode(file_get_contents("./test.json"), true);
-    // run java here
-    // if($query == NULL){
-    //     //get ramdom data here
-    // }else{
-    //     return json_decode(file_get_contents("./test.json"));
-    // }
+function get_data($query){
+    $command = 'java -cp "../wse/lucene-analyzers-common-5.4.1.jar:../wse/lucene-core-5.4.1.jar:../wse/lucene-queryparser-5.4.1.jar:../wse/json-simple-1.1.jar:../wse/SearchEngine.jar:." SearchEngine ';
+    $command .= $query;
+    $result = exec($command);
+    return json_decode($result, true);
 }
