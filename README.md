@@ -14,8 +14,7 @@ Build the jar file  and run
   jar cf SearchEngine.jar *.class
 
  //test command line
- java -cp "./lucene-analyzers-common-5.4.1.jar:lucene-core-5.4.1.jar:lucene-queryparser-5.4.1.jar:json-simple-1.1.jar:SearchEngine.jar:." SearchEngine -query apple
-
+ java -cp "./lucene-analyzers-common-5.4.1.jar:lucene-core-5.4.1.jar:lucene-queryparser-5.4.1.jar:json-simple-1.1.jar:SearchEngine.jar:." SearchEngine -query apple -index ./website/indexDir
 
   ```
 
