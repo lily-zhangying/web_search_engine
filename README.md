@@ -3,7 +3,7 @@
 * The objective of our project is to build a search engine in which we can query an electronic hard-good product and be able to filter our search based on certain criteria such as: price range for the product, certain popular manufacturers, and which web source the product is on.
 
 # Compile and Run
-*First, you must Compile and Run the backend code*
+**First, you must Compile and Run the backend code**
 
 ## Back-end
 Build the jar file  and run 
