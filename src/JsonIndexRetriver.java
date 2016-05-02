@@ -41,8 +41,8 @@ public class JsonIndexRetriver {
 		sourceFlag = false;
 		priceFlag = false;
 
-		String index = "index";
-		String defaultFields = "name,regularPrice,url,image,longDescription,shortDescription,manufacturer";
+		String index = "indexDir";
+		String defaultFields = "name,regularPrice,url,image,longDescription,shortDescription,manufacturer,category,productTemplate";
 		/*
 		 * By default, if -field not in parameter, use all fields inputFields[0]
 		 * = "name"; inputFields[1] = "regularPrice"; //price inputFields[2] =
@@ -203,94 +203,74 @@ public class JsonIndexRetriver {
 			end = hits.length;// Math.min(hits.length, start + hitsPerPage);
 			for (int i = start; i < end; i++) {
 				Document doc = searcher.doc(hits[i].doc);
-
-				if (manuFlag || sourceFlag || priceFlag) {
-					if (manuFlag && sourceFlag && priceFlag) {
-						for (String manu : manufacturerArr) {
-							if (doc.get("manufacturer") != null && doc.get("manufacturer").contains(manu)) {
-								for (String ws : webSourceArr) {
-									if (doc.get("source") != null && doc.get("source").contains(ws)) {
-										if (doc.get("regularPrice") != null) {
-											Double value = Double.valueOf(doc.get("regularPrice"));
-											if (value >= lowRange && value <= highRange) {
-												retDocs.add(doc);
-											}
-										}
-
-									} else {
-										if (doc.get("url").contains(ws)) {
+				if (doc.get("name") != null) {
+					if (manuFlag || sourceFlag || priceFlag) {
+						if (manuFlag && sourceFlag && priceFlag) {
+							for (String manu : manufacturerArr) {
+								if (doc.get("manufacturer") != null && doc.get("manufacturer").contains(manu)) {
+									for (String ws : webSourceArr) {
+										if (doc.get("source") != null && doc.get("source").contains(ws)) {
 											if (doc.get("regularPrice") != null) {
 												Double value = Double.valueOf(doc.get("regularPrice"));
 												if (value >= lowRange && value <= highRange) {
 													retDocs.add(doc);
 												}
 											}
+
+										} else {
+											if (doc.get("url").contains(ws)) {
+												if (doc.get("regularPrice") != null) {
+													Double value = Double.valueOf(doc.get("regularPrice"));
+													if (value >= lowRange && value <= highRange) {
+														retDocs.add(doc);
+													}
+												}
+											}
 										}
 									}
 								}
 							}
-						}
-					} else if (manuFlag && !sourceFlag && !priceFlag) {
-						for (String manu : manufacturerArr) {
-							if (doc.get("manufacturer") != null && doc.get("manufacturer").contains(manu)) {
-								retDocs.add(doc);
-							}
-						}
-					} else if (!manuFlag && sourceFlag && !priceFlag) {
-						for (String ws : webSourceArr) {
-							if (doc.get("source") != null && doc.get("source").contains(ws)) {
-								retDocs.add(doc);
-							} else {
-								if (doc.get("url").contains(ws)) {
+						} else if (manuFlag && !sourceFlag && !priceFlag) {
+							for (String manu : manufacturerArr) {
+								if (doc.get("manufacturer") != null && doc.get("manufacturer").contains(manu)) {
 									retDocs.add(doc);
 								}
 							}
-						}
-					} else if (!manuFlag && !sourceFlag && priceFlag) {
-						if (doc.get("regularPrice") != null) {
-							Double value = Double.valueOf(doc.get("regularPrice"));
-							if (value >= lowRange && value <= highRange) {
-								retDocs.add(doc);
-							}
-						}
-					} else if (manuFlag && sourceFlag && !priceFlag) {
-						for (String manu : manufacturerArr) {
-							if (doc.get("manufacturer") != null && doc.get("manufacturer").contains(manu)) {
-								for (String ws : webSourceArr) {
-									if (doc.get("source") != null && doc.get("source").contains(ws)) {
+						} else if (!manuFlag && sourceFlag && !priceFlag) {
+							for (String ws : webSourceArr) {
+								if (doc.get("source") != null && doc.get("source").contains(ws)) {
+									retDocs.add(doc);
+								} else {
+									if (doc.get("url").contains(ws)) {
 										retDocs.add(doc);
-
-									} else {
-										if (doc.get("url").contains(ws)) {
+									}
+								}
+							}
+						} else if (!manuFlag && !sourceFlag && priceFlag) {
+							if (doc.get("regularPrice") != null) {
+								Double value = Double.valueOf(doc.get("regularPrice"));
+								if (value >= lowRange && value <= highRange) {
+									retDocs.add(doc);
+								}
+							}
+						} else if (manuFlag && sourceFlag && !priceFlag) {
+							for (String manu : manufacturerArr) {
+								if (doc.get("manufacturer") != null && doc.get("manufacturer").contains(manu)) {
+									for (String ws : webSourceArr) {
+										if (doc.get("source") != null && doc.get("source").contains(ws)) {
 											retDocs.add(doc);
+
+										} else {
+											if (doc.get("url").contains(ws)) {
+												retDocs.add(doc);
+											}
 										}
 									}
 								}
 							}
-						}
-					} else if (manuFlag && !sourceFlag && priceFlag) {
-						for (String manu : manufacturerArr) {
-							if (doc.get("manufacturer") != null && doc.get("manufacturer").contains(manu)) {
-								if (doc.get("regularPrice") != null) {
-									Double value = Double.valueOf(doc.get("regularPrice"));
-									if (value >= lowRange && value <= highRange) {
-										retDocs.add(doc);
-									}
-								}
-							}
-						}
-					} else if (!manuFlag && sourceFlag && priceFlag){
-						for (String ws : webSourceArr) {
-							if (doc.get("source") != null && doc.get("source").contains(ws)) {
-								if (doc.get("regularPrice") != null) {
-									Double value = Double.valueOf(doc.get("regularPrice"));
-									if (value >= lowRange && value <= highRange) {
-										retDocs.add(doc);
-									}
-								}
-
-							} else {
-								if (doc.get("url").contains(ws)) {
+						} else if (manuFlag && !sourceFlag && priceFlag) {
+							for (String manu : manufacturerArr) {
+								if (doc.get("manufacturer") != null && doc.get("manufacturer").contains(manu)) {
 									if (doc.get("regularPrice") != null) {
 										Double value = Double.valueOf(doc.get("regularPrice"));
 										if (value >= lowRange && value <= highRange) {
@@ -299,11 +279,33 @@ public class JsonIndexRetriver {
 									}
 								}
 							}
-						}
-					}
+						} else if (!manuFlag && sourceFlag && priceFlag) {
+							for (String ws : webSourceArr) {
+								if (doc.get("source") != null && doc.get("source").contains(ws)) {
+									if (doc.get("regularPrice") != null) {
+										Double value = Double.valueOf(doc.get("regularPrice"));
+										if (value >= lowRange && value <= highRange) {
+											retDocs.add(doc);
+										}
+									}
 
-				} else { //no flags
-					retDocs.add(doc);
+								} else {
+									if (doc.get("url").contains(ws)) {
+										if (doc.get("regularPrice") != null) {
+											Double value = Double.valueOf(doc.get("regularPrice"));
+											if (value >= lowRange && value <= highRange) {
+												retDocs.add(doc);
+											}
+										}
+									}
+								}
+							}
+						}
+
+					} else { // no flags
+
+						retDocs.add(doc);
+					}
 				}
 
 			}

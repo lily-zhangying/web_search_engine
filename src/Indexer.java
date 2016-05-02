@@ -31,7 +31,7 @@ public class Indexer {
 		String usage = "java org.apache.lucene.demo.IndexFiles" + " [-index INDEX_PATH] [-docs DOCS_PATH] [-update]\n\n"
 				+ "This indexes the documents in DOCS_PATH, creating a Lucene index"
 				+ "in INDEX_PATH that can be searched with SearchFiles";
-		String indexPath = "index";
+		String indexPath = "indexDir";
 		String docsPath = null;
 		boolean create = true;
 		for (int i = 0; i < args.length; i++) {
@@ -175,12 +175,24 @@ public class Indexer {
 		                //System.out.println(type);
 		                if(type.equals(String.class)){
 		                	if(field.equals("price")){
-		                		doc.add(new TextField("regularPrice", (String)object.get(field), Field.Store.YES));
+		                		String noSignPrice = (String)object.get(field);
+								if(!noSignPrice.equals("0.0") && !noSignPrice.isEmpty() && noSignPrice != null){
+									noSignPrice = noSignPrice.replace(",", "");
+									doc.add(new TextField("regularPrice", noSignPrice, Field.Store.YES));
+								}
+		                	} else if(field.equals("name")){
+		                		String checkNull = (String)object.get(field);
+		                		if(!checkNull.isEmpty() && checkNull != null && checkNull.length() != 0 && !checkNull.equals("")) {
+		                			doc.add(new TextField("name", (String)object.get(field), Field.Store.YES));
+		                		}else{
+		                			doc.add(new TextField("name", null, Field.Store.YES));
+		                		}
+		  
 		                	} else if(field.equals("Title")){
 		                		doc.add(new TextField("name", (String)object.get(field), Field.Store.YES));
 		                	} else if(field.equals("DetailPageURL")){
 		                		doc.add(new TextField("url", (String)object.get(field), Field.Store.YES));
-		                	}else if(field.equals("Manufacturer") || field.equals("manufacturer") || field.equals("brand")){
+		                	}else if(field.equals("Manufacturer") || field.equals("manufacturer")){
 		                		String manu = (String)object.get(field);
 		                		if(manu.isEmpty() || manu == null){
 		                			//System.out.println("manu");
@@ -189,7 +201,31 @@ public class Indexer {
 		                		else{
 		                			doc.add(new TextField("manufacturer", manu.toLowerCase(), Field.Store.YES));
 		                		}
-		                	} 
+		                	} else if(field.equals("brand")){
+		                		String manu = (String)object.get(field);
+		                		if(manu.isEmpty() || manu == null){
+		                			//System.out.println("manu");
+		                			doc.add(new TextField("manufacturer", "null", Field.Store.YES));
+		                		}
+		                		else{
+		                			manu = manu.substring(2);
+		                			doc.add(new TextField("manufacturer", manu.toLowerCase(), Field.Store.YES));
+		                		}
+		                	}else if(field.equals("feature")){
+		                		String feat = (String)object.get(field);
+		                		if(feat.isEmpty() || feat == null){
+		                			doc.add(new TextField("longDescription", " ", Field.Store.YES));
+		                		}
+		                		else{
+		                			doc.add(new TextField("longDescription", feat, Field.Store.YES));
+		                		}
+		                	}else if(field.equals("ProductGroup") || field.equals("class")){
+		                		doc.add(new TextField("category", (String)object.get(field), Field.Store.YES));
+		                	}else if(field.equals("productTemplate")){
+		                		String pt = (String)object.get(field);
+		                		pt = pt.replace('_', ' ');
+		                		doc.add(new TextField(field, pt, Field.Store.YES));
+		                	}
 		                	
 		                	else{
 		                		doc.add(new TextField(field, (String)object.get(field), Field.Store.YES));

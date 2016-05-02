@@ -201,6 +201,7 @@ function get_empty_page(){
 function get_data($query){
     $command = 'java -cp "../src/lucene-analyzers-common-5.4.1.jar:../src/lucene-core-5.4.1.jar:../src/lucene-queryparser-5.4.1.jar:../src/json-simple-1.1.jar:../src/SearchEngine.jar:." SearchEngine ';
     $command .= $query;
+    $command .= " -index ./indexDir";
     $result = exec($command);
     return json_decode($result, true);
 }
