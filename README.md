@@ -1,19 +1,21 @@
 # web_search_engine
 * description for project here
 
-# Compile and Run
+## First, you must Compile and Run the backend code：
 ## Back-end
 Build the jar file  and run 
 
 * Build Jar File (for Windows OS, change ':' to ';' )
   ```bash
-  cd src
+  cd src   //Must be in src folder
 
+  //first compile all .java files with the jar in the folder
   javac -cp "./lucene-core-5.4.1.jar:./lucene-queryparser-5.4.1.jar:./lucene-analyzers-common-5.4.1.jar:./json-simple-1.1.jar:." *.java
 
+  //create the SearchEngine jar file.
   jar cf SearchEngine.jar *.class
 
- //test command line
+ //A sample command to test the back end and the jar file with a sample query (apple+iphone)
  java -cp "./lucene-analyzers-common-5.4.1.jar:lucene-core-5.4.1.jar:lucene-queryparser-5.4.1.jar:json-simple-1.1.jar:SearchEngine.jar:." SearchEngine -query apple+phone -index ../website/indexDir
 
   ```
@@ -21,6 +23,7 @@ Build the jar file  and run
   * web site also use these command lines and display the result in web page
   * The index files are in website/indexDir 
 
+## Now that you have finished running the back end, you can now check the front end.
 
 ## Front-end
   * We use php, html, css, javascript, JQuery to build our website.
@@ -28,10 +31,12 @@ Build the jar file  and run
   * Put our website directory in the server machine, then run our index.php. it will listen to port 8888.
 
   ```bash
-  cd website
-  php index.php 
+  cd website //leave the src folder and go into the website folder
+  php index.php //use php to run the index file. Make sure php is installed on your system.
 
   starting server on port 8888
 
   ```
-  * Open webserver, visit http://localhost:8888/ to main page our our website
+  * Finally you can open the webserver by visiting:
+   http://localhost:8888/ 
+   This leads to the main page of our website
