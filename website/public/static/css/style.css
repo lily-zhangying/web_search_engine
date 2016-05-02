@@ -509,7 +509,13 @@ ul#header-menu li a.inactive:hover{
 
 #main-content{ float: left; width: 100%; }
 
-#left-column{ float: left; width: 100%; margin-right: 10px; margin-bottom: 10px;}
+#left-column{ 
+  float: left; 
+  width: 100%; 
+  margin-right: 10px; 
+  margin-bottom: 10px;
+  /*height: 80%;*/
+}
 #right-column{ float: left;     width: 100%;}
 
 #main-content .wrap-title-black{ float: left; width: 100%; }
@@ -596,7 +602,11 @@ ul#category-menu  ul.subcategory li a{
 }
 ul#category-menu  ul.subcategory li a:hover{ text-decoration: underline; }
 
-#left-column .left-block{ float: left; /*width: 100%;*/ margin-top: 20px; }
+#left-column .left-block{ 
+  float: left; 
+  margin-top: 20px;
+  height: 350px;
+ }
 
 #left-column .left-block h2.nice-title2{
   float: left; 
