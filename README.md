@@ -2,8 +2,9 @@
 
 * The objective of our project is to build a search engine in which we can query an electronic hard-good product and be able to filter our search based on certain criteria such as: price range for the product, certain popular manufacturers, and which web source the product is on.
 
+# Compile and Run
+* First, you must Compile and Run the backend code：
 
-## First, you must Compile and Run the backend code：
 ## Back-end
 Build the jar file  and run 
 
@@ -25,7 +26,7 @@ Build the jar file  and run
   * web site also use these command lines and display the result in web page
   * The index files are in website/indexDir 
 
-## Now that you have finished running the back end, you can now check the front end.
+*  Now that you have finished running the back end, you can now check the front end.
 
 ## Front-end
   * We use php, html, css, javascript, JQuery to build our website.
