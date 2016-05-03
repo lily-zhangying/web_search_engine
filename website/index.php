@@ -136,7 +136,13 @@ function render_detail($path, $data = NULL,  $query_nopage=""){
     }
     $content = $data['items'];
     $page_num = intval($data['page_number']);
-    $total_page = intval(intval($data['total_items']) / 10);
+    $total_page = 0;
+    if(intval(intval($data['total_items']) % 10) == 0){
+        $total_page = intval(intval($data['total_items']) / 10);
+    }
+    else{
+        $total_page = intval(intval($data['total_items']) / 10) + 1;
+    }
 
     echo file_get_contents("./public/page/top.html");
     //render html here
