@@ -10,7 +10,9 @@ Build the jar file  and run
 
 * Build Jar File (for Windows OS, change ':' to ';' )
   ```bash
-  cd src   //Must be in src folder
+  
+  //Must be in src folder
+  cd src   
 
   //first compile all .java files with the jar in the folder
   javac -cp "./lucene-core-5.4.1.jar:./lucene-queryparser-5.4.1.jar:./lucene-analyzers-common-5.4.1.jar:./json-simple-1.1.jar:." *.java
