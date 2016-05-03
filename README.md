@@ -40,6 +40,7 @@ Build the jar file  and run
   starting server on port 8888
 
   ```
-  * Finally you can open the webserver by visiting:
-   http://localhost:8888/ 
+  * Finally you can open the webserver by visiting: **
+   http://localhost:8888/
+**
    This leads to the main page of our website
