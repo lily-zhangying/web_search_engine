@@ -30,7 +30,7 @@ Build the jar file  and run
 
 ## Front-end
   * We use php, html, css, javascript, JQuery to build our website.
-  * To make our website run, we need one  machine support php. 
+  * **To make our website run, we need one machine support php.** 
   * Put our website directory in the server machine, then run our index.php. it will listen to port 8888.
 
   ```bash
